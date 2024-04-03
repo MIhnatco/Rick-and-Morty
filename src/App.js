@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.scss";
 
-function App() {
+import Character from "./components/character.component";
+
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    fetch("https://rickandmortyapi.com/api/character")
+      .then((response) => response.json())
+      .then((characters) => {
+        setCharacters(characters.results);
+        console.log(characters.results);
+      });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Rick and Morty Rolodex </h1>
+
+      <div className="chars-list-container">
+        {characters.map((character) => (
+          <Character character={character} key={character.id} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
