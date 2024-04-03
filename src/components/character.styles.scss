@@ -1,0 +1,38 @@
+.char-container {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem;
+  transition: transform 0.25s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  h2 {
+    text-align: center;
+    font-family: "Kaushan Script";
+  }
+
+  img {
+    max-width: 70%;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .personal-infos,
+  .additional-infos {
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}

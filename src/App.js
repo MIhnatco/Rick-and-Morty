@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1> Rick and Morty Rolodex </h1>
+      <h1 className="title"> Rick and Morty Rolodex </h1>
 
       <div className="chars-list-container">
         {characters.map((character) => (

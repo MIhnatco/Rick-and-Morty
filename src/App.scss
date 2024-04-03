@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "RickAndMorty";
+  src: local("RickAndMorty"), url("./fonts/get_schwifty.ttf") format("opentype");
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(101, 135, 4, 1) 50%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-family: "RickAndMorty";
+}
+
 /* Extra small devices (phones, 600px and down) */
 .chars-list-container {
   width: 85vw;
@@ -14,8 +41,8 @@
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/* Medium devices (landscape tablets, 920px and up) */
+@media only screen and (min-width: 920px) {
   .chars-list-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
