@@ -20,24 +20,48 @@ body {
   text-align: center;
 }
 
+.App {
+  padding: 1rem;
+}
+
 .title {
   text-align: center;
   font-family: "RickAndMorty";
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 15% 1fr; /* Two columns with equal width */
+  grid-gap: 20px; /* Gap between grid items */
+  padding: 2rem;
+}
+
+/* Just for demonstration purpose */
+.column {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
 /* Extra small devices (phones, 600px and down) */
 .chars-list-container {
-  width: 85vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
+  background-color: transparent;
+  overflow-x: hidden;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) {
   .chars-list-container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Change to single column layout for smaller screens */
   }
 }
 

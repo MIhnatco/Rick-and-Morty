@@ -25,9 +25,9 @@ const Character = ({ character }) => {
           <strong>Episodes:</strong> {episode.length}
         </p>
       </div>
-        <p>
-          <strong>Location:</strong> {location.name}
-        </p>
+      <p>
+        <strong>Location:</strong> {location.name}
+      </p>
     </div>
   );
 };
