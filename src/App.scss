@@ -39,7 +39,6 @@ body {
 /* Just for demonstration purpose */
 .column {
   padding: 20px;
-  background-color: #f0f0f0;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -48,7 +47,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  background-color: transparent;
+
   overflow-x: hidden;
 }
 
@@ -76,5 +75,34 @@ body {
 @media (min-width: 1200px) {
   .chars-list-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* search-box styles */
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+    display: block;
+  }
+
+  input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
   }
 }
