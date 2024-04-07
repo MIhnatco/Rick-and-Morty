@@ -6,7 +6,8 @@ import SearchBox from "./components/SearchBox.component";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
-  const [searchField, setSearchField] = useState("");
+  const [searchName, setSearchName] = useState("");
+  const [searchSpecies, setSearchSpecies] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
 
   //Initial API download
@@ -18,20 +19,31 @@ const App = () => {
       });
   }, []);
 
-  const onSearchChange = (event) => {
+  const onSearchName = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
-    setSearchField(searchFieldString);
+    setSearchName(searchFieldString);
   };
 
   useEffect(() => {
     const newFilteredCharacters = characters.filter((character) => {
-      return character.name.toLocaleLowerCase().includes(searchField);
+      return character.name.toLocaleLowerCase().includes(searchName);
     });
 
     setFilteredCharacters(newFilteredCharacters);
-  }, [characters, searchField]);
+  }, [characters, searchName]);
 
-  console.log(filteredCharacters);
+  const onSearchSpecies = (event) => {
+    const searchFieldString = event.target.value.toLocaleLowerCase();
+    setSearchSpecies(searchFieldString);
+  };
+
+  useEffect(() => {
+    const speciesFilteredCharacters = characters.filter((character) => {
+      return character.species.toLocaleLowerCase().includes(searchSpecies);
+    });
+
+    setFilteredCharacters(speciesFilteredCharacters);
+  }, [characters, searchSpecies]);
 
   return (
     <div className="App">
@@ -42,7 +54,15 @@ const App = () => {
           <SearchBox
             className="search-box"
             placeholder="Search character"
-            onChangeHandler={onSearchChange}
+            onChangeHandler={onSearchName}
+            searchBy="Name"
+          />
+
+          <SearchBox
+            className="search-box"
+            placeholder="Search character"
+            onChangeHandler={onSearchSpecies}
+            searchBy="Species"
           />
         </div>
 

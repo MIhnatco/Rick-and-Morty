@@ -1,18 +1,17 @@
+const SearchBox = ({ className, placeholder, onChangeHandler, searchBy }) => {
+  return (
+    <div>
+      <label for="name">{`Search by ${searchBy}:`}</label>
+      {/* Input field for searching characters */}
+      <input
+        type="search"
+        className={`${className}`}
+        placeholder={placeholder}
+        onChange={onChangeHandler}
+        id="name"
+      />
+    </div>
+  );
+};
 
-
-const SearchBox = ({className, placeholder, onChangeHandler}) => {
-    return (
-        <div>
-            {/* Input field for searching characters */}
-            <input 
-                type="search"
-                className={`${className}`}
-                placeholder={placeholder}
-                onChange={onChangeHandler}
-        />
-      </div>
-    )
-}
-
-
-export default  SearchBox
+export default SearchBox;
