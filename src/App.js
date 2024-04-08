@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.scss";
 
+import logo from "./images/logo@2x.png";
 import Character from "./components/character.component";
 import SearchBox from "./components/SearchBox.component";
 
@@ -62,7 +63,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="title"> Rick and Morty Rolodex </h1>
+      <img src={logo} alt="Rick and Morty" className="logo" />
 
       <div className="container">
         <div className="column search-box">
@@ -71,6 +72,20 @@ const App = () => {
             placeholder="Search character"
             onChangeHandler={onSearchInput}
           />
+
+          <p className="description">
+            Rick and Morty is an American adult animated science fiction sitcom
+            created by Justin Roiland and Dan Harmon for Cartoon Network's
+            nighttime programming block Adult Swim.{" "}
+          </p>
+          <p className="description">
+            The series follows the misadventures of Rick Sanchez, a cynical mad
+            scientist, and his good-hearted but fretful grandson Morty Smith,
+            who split their time between domestic life and interdimensional
+            adventures that take place across an infinite number of realities,
+            often traveling to other planets and dimensions through portals and
+            on Rick's flying saucer.
+          </p>
         </div>
 
         <div className="column chars-list-container">

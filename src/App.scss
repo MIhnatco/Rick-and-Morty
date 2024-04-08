@@ -24,9 +24,9 @@ body {
   padding: 1rem;
 }
 
-.title {
-  text-align: center;
-  font-family: "RickAndMorty";
+.logo {
+  width: 60%;
+  height: auto;
 }
 
 .container {
@@ -36,12 +36,14 @@ body {
   padding: 2rem;
 }
 
-/* Just for demonstration purpose */
 .column {
   padding: 20px;
 }
 
-/* Extra small devices (phones, 600px and down) */
+.description {
+  color: #fff;
+}
+
 .chars-list-container {
   margin: 0 auto;
   display: grid;
@@ -69,12 +71,20 @@ body {
   .chars-list-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .logo {
+    width: 40%;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .chars-list-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .logo {
+    width: 30%;
   }
 }
 
