@@ -11,4 +11,12 @@ describe("Character component", () => {
     episode: ["S01E01", "S01E02"],
     location: { name: "Earth" },
   };
+
+  //render the Character component with the mockCharacter
+  render(<Character character={mockCharacter} />);
+
+  it("should render the character's name", () => {
+    const nameElement = screen.getByText("Rick Sanchez");
+    expect(nameElement).toBeInTheDocument();
+  });
 });
